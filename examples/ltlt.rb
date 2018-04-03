@@ -1,5 +1,5 @@
 #<<
-##add to the end of this array
+##add to the last index of the array
 class GameList
   
   def initialize()
