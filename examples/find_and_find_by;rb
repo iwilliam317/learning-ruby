@@ -1,0 +1,14 @@
+#scenario
+#[#<Father:0x0055f3677ef620
+#  id: 1,
+#  name: "Rafael Ribeiro",
+#  gender: "male",
+#  created_at: Wed, 28 Mar 2018 16:20:23 UTC +00:00,
+#  updated_at: Wed, 28 Mar 2018 16:20:23 UTC +00:00,
+#  code: nil>,
+
+Father.find(1) #return Father
+Father.find_by(id: 1) #return Father
+
+Father.find(3) #returns ActiveRecord::RecordNotFound: Couldn't find Father with 'id'=3
+Father.find_by(id: 3) #returns nil
