@@ -24,3 +24,24 @@ end
 puts person.walk
 puts person.talk
 puts Human.walk
+
+
+
+
+class MyClass
+  
+end
+
+my_class = MyClass.new
+another_class = MyClass.new
+  
+def my_class.greetings 
+  " hey.."
+end  
+
+
+my_class.respond_to?(:greetings)
+another_class.respond_to?(:greetings)
+
+p my_class.singleton_methods
+p another_class.singleton_methods
