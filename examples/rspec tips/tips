@@ -25,3 +25,21 @@ STUBBING
       delete :destroy, { id: user.to_param }, valid_session
       expect(response).to be_falsey
     end
+
+TESTING SERIALIZER
+
+  before(:each) do
+    # Create an instance of the model
+    @sample = FactoryGirl.build(:sample)
+
+    # Create a serializer instance
+    @serializer = SampleSerializer.new(@sample)
+
+    # Create a serialization based on the configured adapter
+    @serialization = ActiveModelSerializers::Adapter.create(@serializer)
+  end
+  subject { JSON.parse(@serialization.to_json) }
+  
+  it 'should have a name that matches' do
+    expect(subject['name']).to eql(@sample.name)
+  end
