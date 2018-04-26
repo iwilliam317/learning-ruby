@@ -1,0 +1,16 @@
+CREATING MULTIPLES OBJECTS
+#not so good
+let(:users) { 4.times.map { create(:user) } }
+
+#good
+users = create_list(:user, 4)
+
+INSTANCE VARIABLE (BEFORE EACH) X VARIABLE (LET)
+  Benefits with let:
+    Lazy loaded variables
+    Faster than before(:each), slower than before(:all)
+    Better readability
+    Flexible usage
+
+  Benefits with instance variables:
+    Useful for tests that need just one simple setup with a before(:all)
