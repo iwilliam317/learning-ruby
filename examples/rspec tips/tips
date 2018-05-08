@@ -43,3 +43,12 @@ TESTING SERIALIZER
   it 'should have a name that matches' do
     expect(subject['name']).to eql(@sample.name)
   end
+
+
+  TESTING AJAX EXAMPLE
+  describe 'GET #load_projects' do
+    let(:tenancy) { create(:active_tenancy, subdomain: 'test') }
+    it 'returns status code 200' do
+      xhr :get, :load_projects, tenancy_id: tenancy.id
+    end
+  end
